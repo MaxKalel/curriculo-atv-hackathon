@@ -1,0 +1,40 @@
+<section class="skills-card">
+  <div class="skills-card__header">
+    <h2 class="skills-card__title">Habilidades & Competências</h2>
+    <span class="skills-card__subtitle">Filtre por categoria de atuação</span>
+  </div>
+
+  <!-- Botões de Filtro Reativo -->
+  <div class="skills-card__filters">
+    @for (cat of categorias(); track cat) {
+      <button 
+        type="button"
+        class="skills-card__filter-btn"
+        [class.skills-card__filter-btn--active]="filtroAtivo() === cat"
+        (click)="setFiltro(cat)">
+        {{ cat }}
+      </button>
+    }
+  </div>
+
+  <!-- Grid de Habilidades -->
+  <div class="skills-card__grid">
+    @for (skill of skillsFiltradas(); track skill.nome) {
+      <div class="skills-card__item">
+        <div class="skills-card__item-header">
+          <span class="skills-card__item-name">{{ skill.nome }}</span>
+          <span class="skills-card__item-cat">{{ skill.categoria }}</span>
+        </div>
+
+        <div class="skills-card__bar-bg">
+          <div 
+            class="skills-card__bar-fill"
+            [style.width.%]="skill.nivel">
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <p class="skills-card__empty">Nenhuma habilidade encontrada nesta categoria.</p>
+    }
+  </div>
+</section>

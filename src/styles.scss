@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import da fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   DESIGN TOKENS GLOBAIS - TEMA ESCURO (PADRÃO)
+   ========================================== */
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Cores de Fundo (Dark Mode) */
+  --bg-primary: #0b0f19;
+  --bg-secondary: #111827;
+  --bg-card: rgba(17, 24, 39, 0.75);
+  --bg-card-hover: rgba(31, 41, 55, 0.85);
+
+  /* Cores de Texto (Dark Mode) */
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  /* Cor de Destaque / Identidade (Ciano Neon) */
+  --accent: #00f2fe;
+  --accent-glow: rgba(0, 242, 254, 0.25);
+  --accent-secondary: #4facfe;
+
+  /* Bordas e Espaçamentos */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color-hover: rgba(0, 242, 254, 0.4);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+
+  /* Transição suave de cores ao trocar de tema */
+  --transition-theme: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================
+   TOKENS PARA TEMA CLARO (LIGHT MODE)
+   ========================================== */
+[data-theme='light'] {
+  --bg-primary: #f3f4f6;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(243, 244, 246, 0.95);
+
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+
+  --accent: #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.2);
+  --accent-secondary: #0369a1;
+
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-color-hover: rgba(2, 132, 199, 0.4);
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   RESET CSS GLOBAL
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--transition-theme);
+  -webkit-font-smoothing: antialiased;
+}
+

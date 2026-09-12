@@ -1,0 +1,123 @@
+.experiencia-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-theme), border-color 0.3s ease;
+
+  &:hover {
+    border-color: var(--border-color-hover);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: relative;
+  padding-left: 0.25rem;
+
+  // Linha conectora vertical da Timeline
+  &::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+    left: 19px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent), rgba(255, 255, 255, 0.1));
+    z-index: 1;
+  }
+
+  &__item {
+    display: flex;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__marker {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__icon {
+    font-size: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    width: 100%;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      transform: translateX(4px);
+      border-color: var(--border-color-hover);
+    }
+  }
+
+  &__periodo {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__subtitulo {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  &__descricao {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 0.25rem;
+  }
+}

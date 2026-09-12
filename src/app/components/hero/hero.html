@@ -1,0 +1,21 @@
+<section class="hero-card">
+  <div class="hero-card__avatar-container">
+    <img 
+      class="hero-card__avatar" 
+      [src]="avatarUrl()" 
+      [alt]="'Foto de perfil de ' + nome()" 
+    />
+    <span class="hero-card__status-dot" title="Disponível para o Hackathon Proenergia"></span>
+  </div>
+
+  <div class="hero-card__content">
+    <div class="hero-card__header">
+      <span class="hero-card__badge">{{ papel() }}</span>
+      <span class="hero-card__tag">⚡ Proenergia Summit 2026</span>
+    </div>
+    
+    <h1 class="hero-card__title">{{ nome() }}</h1>
+    <p class="hero-card__bio">{{ bio() }}</p>
+  </div>
+</section>
+
